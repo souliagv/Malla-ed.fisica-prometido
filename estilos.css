@@ -1,1 +1,163 @@
+/* --- Variables de Color y Estilos Base --- */
+:root {
+    --color-cafe-oscuro: #6d4c41;
+    --color-cafe-claro: #a1887f;
+    --color-beige-fondo: #f5f5dc; /* Beige */
+    --color-blanco-crema: #fffaf0; /* Blanco */
+    --color-aprobado: #2e7d32; /* Verde oscuro para aprobación */
+    --color-texto-principal: #3e2723;
+    --color-texto-secundario: #fafafa;
+    --color-bloqueado: #9e9e9e;
+    --color-error: #c62828; /* Rojo para errores */
+}
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-beige-fondo);
+    color: var(--color-texto-principal);
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/sharks.png'); /* ¡Tiburones! */
+    background-color: var(--color-beige-fondo);
+}
+
+/* --- Encabezado --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: var(--color-cafe-oscuro);
+    font-size: clamp(2em, 5vw, 2.8em); /* Tamaño de fuente responsivo */
+    font-weight: 700;
+}
+
+header p {
+    color: var(--color-cafe-claro);
+    font-size: clamp(1em, 2vw, 1.1em);
+}
+
+/* --- Contenedor Principal de la Malla --- */
+#malla-curricular {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-cafe-claro) var(--color-beige-fondo);
+}
+
+/* --- Columnas de Semestre --- */
+.semestre {
+    flex: 0 0 280px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Colores alternados para las columnas */
+.semestre:nth-child(even) { /* Columnas pares: color café */
+    background-color: var(--color-cafe-claro);
+}
+.semestre:nth-child(odd) { /* Columnas impares: color blanco/crema */
+    background-color: var(--color-blanco-crema);
+}
+
+.semestre h2 {
+    text-align: center;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid;
+    font-weight: 600;
+}
+.semestre:nth-child(even) h2 {
+    color: var(--color-texto-secundario);
+    border-bottom-color: var(--color-texto-secundario);
+}
+.semestre:nth-child(odd) h2 {
+    color: var(--color-cafe-oscuro);
+    border-bottom-color: var(--color-cafe-claro);
+}
+
+/* --- Tarjetas de Ramo --- */
+.ramo {
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+.semestre:nth-child(even) .ramo {
+    background-color: var(--color-blanco-crema);
+    color: var(--color-texto-principal);
+}
+.semestre:nth-child(odd) .ramo {
+    background-color: #f8f8f8;
+    border-color: #e0e0e0;
+}
+
+/* --- Estados de los Ramos --- */
+.ramo:not(.bloqueado):hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.ramo.aprobado {
+    background-color: var(--color-aprobado) !important;
+    color: white !important;
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+.ramo.bloqueado {
+    background-color: #e0e0e0 !important;
+    color: var(--color-bloqueado) !important;
+    opacity: 0.7;
+    cursor: not-allowed;
+    border: 1px dashed var(--color-bloqueado);
+}
+
+/* --- Popup de Mensajes --- */
+#mensaje-popup {
+    position: fixed;
+    bottom: -100px; /* Inicia oculto abajo */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-cafe-oscuro);
+    color: var(--color-blanco-crema);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    transition: bottom 0.5s ease-in-out;
+}
+
+#mensaje-popup.visible {
+    bottom: 20px; /* Se desliza hacia arriba */
+}
+
+#mensaje-popup.error {
+    background-color: var(--color-error);
+}
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    #malla-curricular {
+        padding: 10px;
+    }
+    .semestre {
+        flex: 0 0 250px; /* Columnas un poco más angostas en móvil */
+    }
+}
