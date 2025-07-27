@@ -1,1 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva - EFI</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <h1>Malla Curricular EFI 🦈</h1>
+        <p>Haz clic en un ramo para marcar tu progreso. ¡Vamos con todo!</p>
+    </header>
+
+    <main id="malla-curricular">
+        <div class="semestre" data-semestre="1">
+            <h2>Semestre I</h2>
+            <div class="ramo" id="pi1" data-requisitos="">Práctica inicial 1</div>
+            <div class="ramo" id="ih" data-requisitos="">Iniciación al handball</div>
+            <div class="ramo" id="if" data-requisitos="">Iniciación al fútbol</div>
+            <div class="ramo" id="ia" data-requisitos="">Iniciación al atletismo</div>
+            <div class="ramo" id="bte" data-requisitos="">Bases teóricas de la educación física y el deporte</div>
+            <div class="ramo" id="fe" data-requisitos="">Filosofía y educación</div>
+            <div class="ramo" id="coe" data-requisitos="">Comunicación oral y escrita</div>
+        </div>
+
+        <div class="semestre" data-semestre="2">
+            <h2>Semestre II</h2>
+            <div class="ramo" id="pi2" data-requisitos="pi1">Práctica inicial 2</div>
+            <div class="ramo" id="h" data-requisitos="ih">Handball</div>
+            <div class="ramo" id="f" data-requisitos="if">Fútbol</div>
+            <div class="ramo" id="a" data-requisitos="ia">Atletismo</div>
+            <div class="ramo" id="ec" data-requisitos="">Expresión corporal</div>
+            <div class="ramo" id="psd" data-requisitos="fe">Psicología del desarrollo</div>
+            <div class="ramo" id="ei" data-requisitos="">Educación inclusiva</div>
+        </div>
+
+        <div class="semestre" data-semestre="3">
+            <h2>Semestre III</h2>
+            <div class="ramo" id="pint1" data-requisitos="pi2">Práctica intermedia 1</div>
+            <div class="ramo" id="bpa" data-requisitos="">Bases psicológicas y aplicadas a la actividad física</div>
+            <div class="ramo" id="folk" data-requisitos="">Folklore</div>
+            <div class="ramo" id="dee" data-requisitos="">Didactica y evaluacion en educacion fisica</div>
+            <div class="ramo" id="g1" data-requisitos="">Gimnasia 1</div>
+            <div class="ramo" id="pen" data-requisitos="psd">Psicología educacional y neurociencias</div>
+            <div class="ramo" id="ced" data-requisitos="">Currículum y evaluación para la diversidad</div>
+        </div>
+
+        <div class="semestre" data-semestre="4">
+            <h2>Semestre IV</h2>
+            <div class="ramo" id="pint2" data-requisitos="pint1">Práctica intermedia 2</div>
+            <div class="ramo" id="af" data-requisitos="">Anatomía funcional</div>
+            <div class="ramo" id="jrp" data-requisitos="">Juego como recurso pedagógico</div>
+            <div class="ramo" id="iv" data-requisitos="">Iniciación al voleibol</div>
+            <div class="ramo" id="g2" data-requisitos="g1">Gimnasia 2</div>
+            <div class="ramo" id="ib" data-requisitos="">Iniciacion al basquetbol</div>
+            <div class="ramo" id="cse" data-requisitos="">Ciencias sociales y educación</div>
+            <div class="ramo" id="pc" data-requisitos="">Pensamiento crítico</div>
+        </div>
+
+        <div class="semestre" data-semestre="5">
+            <h2>Semestre V</h2>
+            <div class="ramo" id="pint3" data-requisitos="pint2">Práctica intermedia 3</div>
+            <div class="ramo" id="fej" data-requisitos="af">Fisiología del ejercicio</div>
+            <div class="ramo" id="cne" data-requisitos="jrp">Contacto con la naturaleza y escalada</div>
+            <div class="ramo" id="v" data-requisitos="iv">Voleibol</div>
+            <div class="ramo" id="m1" data-requisitos="">Motricidad 1: neurociencia</div>
+            <div class="ramo" id="b" data-requisitos="ib">Basquetbol</div>
+            <div class="ramo" id="interc" data-requisitos="cse">Interculturalidad</div>
+            <div class="ramo" id="ls" data-requisitos="">Lengua de señas</div>
+        </div>
+        
+        <div class="semestre" data-semestre="6">
+            <h2>Semestre VI</h2>
+            <div class="ramo" id="pint4" data-requisitos="pint3">Práctica intermedia 4</div>
+            <div class="ramo" id="bioa" data-requisitos="fej">Biomecánica aplicada</div>
+            <div class="ramo" id="cnee" data-requisitos="cne">Contacto con la naturaleza y ecoturismo</div>
+            <div class="ramo" id="gad" data-requisitos="">Gestión, administración deportiva y elaboración de proyectos</div>
+            <div class="ramo" id="m2" data-requisitos="m1">Motricidad 2: paradigmas y aplicación</div>
+            <div class="ramo" id="fc" data-requisitos="interc">Formación ciudadana</div>
+        </div>
+
+        <div class="semestre" data-semestre="7">
+            <h2>Semestre VII</h2>
+            <div class="ramo" id="pp1" data-requisitos="pint4">Práctica profesional 1</div>
+            <div class="ramo" id="te" data-requisitos="bioa">Teoría del entrenamiento</div>
+            <div class="ramo" id="nat" data-requisitos="">Natación</div>
+            <div class="ramo" id="tm" data-requisitos="">Tenis de mesa</div>
+            <div class="ramo" id="ame" data-requisitos="m2">Actividades motrices emergentes</div>
+            <div class="ramo" id="inve" data-requisitos="">Investigación educativa</div>
+            <div class="ramo" id="cti1" data-requisitos="">Curso transversal institucional 1</div>
+        </div>
+
+        <div class="semestre" data-semestre="8">
+            <h2>Semestre VIII</h2>
+            <div class="ramo" id="pp2" data-requisitos="pp1">Práctica profesional 2</div>
+            <div class="ramo" id="sn" data-requisitos="">Salud y nutrición</div>
+            <div class="ramo" id="nats" data-requisitos="nat">Natación y salvataje</div>
+            <div class="ramo" id="tc" data-requisitos="tm">Tenis de campo</div>
+            <div class="ramo" id="sg" data-requisitos="">Seminario de grado</div>
+            <div class="ramo" id="cti2" data-requisitos="cti1">Curso transversal institucional 2</div>
+        </div>
+
+        <div class="semestre" data-semestre="9">
+            <h2>Semestre IX</h2>
+            <div class="ramo" id="m1-am" data-requisitos="pp2">Mención en adulto mayor 1</div>
+            <div class="ramo" id="m1-eb" data-requisitos="pp2">Mención en educación básica 1</div>
+            <div class="ramo" id="p1-am" data-requisitos="pp2">Practica 1 en adulto mayor</div>
+            <div class="ramo" id="p1-eb" data-requisitos="pp2">Practica 1 en educación básica</div>
+            <div class="ramo" id="st1" data-requisitos="sg">Seminario de título 1</div>
+        </div>
+
+        <div class="semestre" data-semestre="10">
+            <h2>Semestre X</h2>
+            <div class="ramo" id="m2-am" data-requisitos="m1-am">Mención en adulto mayor 2</div>
+            <div class="ramo" id="m2-eb" data-requisitos="m1-eb">Mención en educación básica 2</div>
+            <div class="ramo" id="p2-am" data-requisitos="p1-am">Práctica 2 en adulto mayor</div>
+            <div class="ramo" id="p2-eb" data-requisitos="p1-eb">Práctica 2 en educación básica</div>
+            <div class="ramo" id="st2" data-requisitos="st1">Seminario de titulo 2</div>
+        </div>
+    </main>
+
+    <div id="mensaje-popup"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
